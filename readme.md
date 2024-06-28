@@ -8,3 +8,10 @@ A React WebApp Frontend similar to Swiggy to order your favourite foods online.
 
 ### Menu Page
 ![MenuPage](https://github.com/shubhxg/FoodHub/assets/69891912/d03489b2-5bb7-4da7-83e6-a12c3db05eab)
+
+## Contribution
+All the contributions are welcome!
+
+For contribution: 
+1. Create an `issue`
+2. Open a `Pull request` to close that issue.
