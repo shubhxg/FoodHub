@@ -1,4 +1,4 @@
-import UserClass from "./UserClass";
+import UserClass from "../components/User/UserClass";
 
 export default function About() {
   return (
