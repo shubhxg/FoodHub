@@ -6,7 +6,12 @@ import ContactUs from "./components/ContactUs";
 import About from "./components/About";
 import Error from "./components/Error";
 import MenuPage from "./components/MenuPage";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  ScrollRestoration,
+} from "react-router-dom";
 import Skeleton from "./components/Skeleton";
 
 const Grocery = lazy(() => import("./components/Grocery"));
@@ -14,6 +19,7 @@ const Grocery = lazy(() => import("./components/Grocery"));
 function AppLayout() {
   return (
     <div className="app box-border text-white">
+      <ScrollRestoration />
       <Header />
       <Outlet />
     </div>
@@ -55,5 +61,5 @@ const appRouter = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <RouterProvider router={appRouter} />
+  <RouterProvider router={appRouter} />
 );
