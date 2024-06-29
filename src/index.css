@@ -12,3 +12,33 @@
   font-style: normal;
   font-size: 1.025rem;
 }
+
+@layer components {
+  .slim-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+  }
+
+  .slim-scrollbar::-webkit-scrollbar {
+    cursor: pointer;
+    width: 6px;
+    height: 6px;
+  }
+  
+  .slim-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(179, 187, 201, 0.5);
+    border-radius: 3px;
+  }
+  
+  .slim-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .slim-scrollbar:not(:hover)::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  .slim-scrollbar:not(:hover) {
+    scrollbar-color: transparent transparent;
+  }
+}

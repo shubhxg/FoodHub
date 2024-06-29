@@ -36,8 +36,8 @@ export default function Main() {
       <h1 className="font-black ml-8 text-2xl text-gray-800 mb-4">
         What's on your mind?
       </h1>
-      <div className="px-8 p-2 -m-2 overflow-x-auto">
-        <div className="cuisines-container flex flex-nowrap gap-6 mb-12 pb-4">
+      <div className="px-8 p-2 -m-2 overflow-x-auto slim-scrollbar">
+        <div className="cuisines-container flex flex-nowrap gap-6 mb-2 pb-4">
           {cuisines.map((item) => (
             <div key={item.id} className="flex-none">
               <CardCuisines {...item} />
