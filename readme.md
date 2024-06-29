@@ -1,5 +1,5 @@
 ## FoodHub🍴
-A React WebApp Front-end similar to Swiggy.
+A React WebApp Front-end Inspired from Swiggy.
 
 ## Screenshots 🥃
 ### Main Page
