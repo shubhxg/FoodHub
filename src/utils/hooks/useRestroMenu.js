@@ -15,6 +15,7 @@ export default function useRestroMenu(resId) {
       const data = await fetch(URL);
       const menuInfo = await data.json();
       setRestroData(menuInfo);
+      console.log(resInfo);
     } catch (err) {
       console.error(err);
     }

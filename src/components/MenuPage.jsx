@@ -6,7 +6,6 @@ import useRestroMenu from "../utils/hooks/useRestroMenu";
 export default function MenuPage() {
   const { resId } = useParams();
   const [resInfo, resName] = useRestroMenu(resId);
-  console.log(resInfo);
 
   return !resInfo.length ? (
     <main className="hero mt-12 mx-48 h-full">
@@ -17,7 +16,7 @@ export default function MenuPage() {
       <div>
         <h1 className="text-gray-800 text-2xl font-black mt-8">{resName}</h1>
         <h3 className="text-gray-800 text-lg font-black mt-1 mb-6">
-          Top Picks
+          Top Picks ({resInfo.length})
         </h3>
       </div>
       <div className="menuContainer text-gray-800 flex flex-col items-center">

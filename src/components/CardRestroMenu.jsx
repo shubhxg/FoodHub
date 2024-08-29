@@ -49,8 +49,7 @@ export default function CardRestroMenu(props) {
             </svg>
             {rating}
           </span>
-          <br />
-          <h6 className="text-md w-4/5 text-gray-600">
+          <h6 className="text-md mt-4 w-4/5 text-gray-600">
             {description?.length > 100 ? (
               <>
                 {description.slice(0, 100)}...
