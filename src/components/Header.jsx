@@ -24,7 +24,6 @@ export default function Header() {
             <Link to="/about">
               <li>About Us</li>
             </Link>
-            <li>Cart</li>
             <Link to={groceryButtonText === "Grocery" ? "/grocery" : "/"}>
               <button
                 className="grocery px-4 py-2 rounded hover:bg-green-500 hover:text-white flex items-center justify-center"
@@ -40,7 +39,7 @@ export default function Header() {
                     width="28"
                     height="28"
                     fill="currentColor"
-                    className="bi bi-arrow-left pr-1"
+                    className="bi bi-arrow-left pr-1 gobackarrow"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -50,7 +49,7 @@ export default function Header() {
                   </svg>
                 ) : (
                   <svg
-                    className="pr-1"
+                    className="pr-1 carrot"
                     xmlns="http://www.w3.org/2000/svg"
                     width="28"
                     height="28"

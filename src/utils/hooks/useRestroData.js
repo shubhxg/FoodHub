@@ -16,10 +16,10 @@ export default function useRestroData() {
     setFilteredList(sliceData(resDataList));
   }
 
-  const sliceData = (restData) => {
-    return restData.length % 3 === 0
-      ? restData
-      : restData.slice(0, Math.floor(restData.length / 3) * 3);
+  function sliceData (resDataList) {
+    return resDataList.length % 3 === 0
+      ? resDataList
+      : resDataList.slice(0, Math.floor(resDataList.length / 3) * 3);
   };
 
   return [

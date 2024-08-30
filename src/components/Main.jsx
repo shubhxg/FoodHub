@@ -1,4 +1,3 @@
-import { CardRestro, withNewLabel, withPromotedLabel } from "./CardRestro";
 import Skeleton from "./Skeleton";
 import useRestroData from "../utils/hooks/useRestroData";
 import useOnlineStatus from "../utils/hooks/useOnlineStatus";
@@ -6,6 +5,7 @@ import useCuisinesData from "../utils/hooks/useCuisinesData";
 import CardCuisines from "../components/CardCuisines";
 import { Link } from "react-router-dom";
 import Offline from "./Offline";
+import { CardRestro, withNewLabel, withPromotedLabel } from "./CardRestro";
 
 export default function Main() {
   const [

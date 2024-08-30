@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import ContactUs from "./components/ContactUs";
-import About from "./components/About";
 import Error from "./components/Error";
 import MenuPage from "./components/MenuPage";
 import {
@@ -15,6 +14,7 @@ import {
 import Skeleton from "./components/Skeleton";
 
 const Grocery = lazy(() => import("./components/Grocery"));
+const AboutUs = lazy(() => import("./components/About"));
 
 function AppLayout() {
   return (
@@ -49,7 +49,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<Skeleton />}>
+            <AboutUs />
+          </Suspense>
+        ),
       },
       {
         path: "/res/:resId",
