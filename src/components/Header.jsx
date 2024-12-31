@@ -8,23 +8,31 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-20 py-3 px-52 bg-white shadow-[0_35px_60px_-30px_rgba(0,0,0,0.3)] text-gray-800">
-      <div className="flex justify-between">
+      <nav className="flex justify-between">
         <div>
-          <a href="/" className="logo flex items-center">
-            <figure>
-              <img className="rounded-xl w-10" src={LOGO_URL} alt="Logo" />
+          <a href="/" className="logo flex items-center" aria-label="Go to homepage">
+            <figure role="img" aria-labelledby="logo-caption">
+              <img
+                className="rounded-xl w-10"
+                src={LOGO_URL}
+                alt="Foodhub Logo"
+              />
+              <figcaption id="logo-caption" className="text-sm text-gray-600 hidden">
+                FoodHub Logo
+              </figcaption>
             </figure>
+
             <span className="mx-4 cursor-pointer text-lg font-bold text-rose-600">
-              {groceryButtonText === "Grocery" ? "FoodHub 🍴" : "GroceryHub 🥕"}
+              {groceryButtonText === "Grocery" ? "FoodHub" : "GroceryHub"}
             </span>
           </a>
         </div>
         <div className="flex items-center justify-center text-gray-800 font-bold">
           <ul className="flex gap-16 items-center">
-            <Link to="/about">
+            <Link to="/about" aria-label="About us">
               <li>About Us</li>
             </Link>
-            <Link to={groceryButtonText === "Grocery" ? "/grocery" : "/"}>
+            <Link to={groceryButtonText === "Grocery" ? "/grocery" : "/"} aria-label={groceryButtonText === "Grocery" ? "Go to Grocery" : "Go Back to Home"}>
               <button
                 className="grocery px-4 py-2 rounded hover:bg-green-500 hover:text-white flex items-center justify-center"
                 onClick={() =>
@@ -32,6 +40,7 @@ export default function Header() {
                     groceryButtonText === "Grocery" ? "Go Back" : "Grocery"
                   )
                 }
+                aria-label={groceryButtonText === "Go Back" ? "Go Back" : "Go to Grocery"}
               >
                 {groceryButtonText === "Go Back" ? (
                   <svg
@@ -41,9 +50,10 @@ export default function Header() {
                     fill="currentColor"
                     className="bi bi-arrow-left pr-1 gobackarrow"
                     viewBox="0 0 16 16"
+                    aria-hidden="true"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
                     />
                   </svg>
@@ -55,6 +65,7 @@ export default function Header() {
                     height="28"
                     fill="currentColor"
                     viewBox="0 0 256 256"
+                    aria-hidden="true"
                   >
                     <path d="M232,64H203.31l26.35-26.34a8,8,0,0,0-11.32-11.32L192,52.69V24a8,8,0,0,0-16,0V56.57a64,64,0,0,0-77.2,10.12l0,0,0,0,0,0c-40.1,39.39-70.25,133.08-73.19,142.45a16,16,0,0,0,21.26,21.26c9.37-2.94,103.18-33.13,142.47-73.21A64,64,0,0,0,199.43,80H232a8,8,0,0,0,0-16Zm-54.12,82c-8.94,9.12-21.25,17.8-34.85,25.73l-25.38-25.39a8,8,0,0,0-11.32,11.32l22.09,22.09c-40.87,21.19-86.32,35.42-87,35.63A7.93,7.93,0,0,0,40,216a7.93,7.93,0,0,0,.59-1.41c.29-.93,28-89.58,64-130.67l33.77,33.77a8,8,0,0,0,11.32-11.32L116.18,72.88A48,48,0,0,1,177.88,146Z"></path>
                   </svg>
@@ -69,12 +80,13 @@ export default function Header() {
                   ? setLoginButton("Logout")
                   : setLoginButton("Login");
               }}
+              aria-label={loginButton === "Login" ? "Login" : "Logout"}
             >
               {loginButton}
             </button>
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }
