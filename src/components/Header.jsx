@@ -1,8 +1,9 @@
 import { LOGO_URL } from "../utils/data/constants";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
   const [loginButton, setLoginButton] = useState("Login");
   const [groceryButtonText, setGroceryButtonText] = useState("Grocery");
 
@@ -10,14 +11,21 @@ export default function Header() {
     <header className="sticky top-0 z-20 py-3 px-52 bg-white shadow-[0_35px_60px_-30px_rgba(0,0,0,0.3)] text-gray-800">
       <nav className="flex justify-between">
         <div>
-          <a href="/" className="logo flex items-center" aria-label="Go to homepage">
+          <a
+            href="/"
+            className="logo flex items-center"
+            aria-label="Go to homepage"
+          >
             <figure role="img" aria-labelledby="logo-caption">
               <img
                 className="rounded-xl w-10"
                 src={LOGO_URL}
                 alt="Foodhub Logo"
               />
-              <figcaption id="logo-caption" className="text-sm text-gray-600 hidden">
+              <figcaption
+                id="logo-caption"
+                className="text-sm text-gray-600 hidden"
+              >
                 FoodHub Logo
               </figcaption>
             </figure>
@@ -32,7 +40,14 @@ export default function Header() {
             <Link to="/about" aria-label="About us">
               <li>About Us</li>
             </Link>
-            <Link to={groceryButtonText === "Grocery" ? "/grocery" : "/"} aria-label={groceryButtonText === "Grocery" ? "Go to Grocery" : "Go Back to Home"}>
+            <Link
+              to={groceryButtonText === "Grocery" ? "/grocery" : "/"}
+              aria-label={
+                groceryButtonText === "Grocery"
+                  ? "Go to Grocery"
+                  : "Go Back to Home"
+              }
+            >
               <button
                 className="grocery px-4 py-2 rounded hover:bg-green-500 hover:text-white flex items-center justify-center"
                 onClick={() =>
@@ -40,7 +55,9 @@ export default function Header() {
                     groceryButtonText === "Grocery" ? "Go Back" : "Grocery"
                   )
                 }
-                aria-label={groceryButtonText === "Go Back" ? "Go Back" : "Go to Grocery"}
+                aria-label={
+                  groceryButtonText === "Go Back" ? "Go Back" : "Go to Grocery"
+                }
               >
                 {groceryButtonText === "Go Back" ? (
                   <svg
@@ -76,9 +93,11 @@ export default function Header() {
             <button
               className="py-2 px-6 bg-rose-600 text-white rounded"
               onClick={() => {
-                loginButton === "Login"
-                  ? setLoginButton("Logout")
-                  : setLoginButton("Login");
+                if (loginButton === "Login") {
+                  navigate("/login");
+                } else {
+                  setLoginButton("Login");
+                }
               }}
               aria-label={loginButton === "Login" ? "Login" : "Logout"}
             >

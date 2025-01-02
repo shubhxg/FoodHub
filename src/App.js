@@ -5,6 +5,8 @@ import Main from "./components/Main";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import MenuPage from "./components/MenuPage";
+import Login from "./components/Login/Login"
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -42,6 +44,10 @@ const appRouter = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/contactus",
