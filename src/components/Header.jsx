@@ -30,8 +30,8 @@ export default function Header() {
               </figcaption>
             </figure>
 
-            <span className="mx-4 cursor-pointer text-lg font-bold text-rose-600">
-              {groceryButtonText === "Grocery" ? "FoodHub" : "GroceryHub"}
+            <span className={`mx-4 cursor-pointer text-lg font-bold ${groceryButtonText === "Grocery" ? "text-rose-600" : "text-green-600"}`}>
+              {groceryButtonText === "Grocery" ? "FoodPalace" : "Grocer-E by FoodPalace"}
             </span>
           </a>
         </div>
