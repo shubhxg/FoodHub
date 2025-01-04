@@ -21,11 +21,11 @@ export default function Login() {
 
   return (
     <div className="md:h-full py-16 md:flex md:items-center md:justify-center bg-gray-100 min-w-screen">
-      <div className="bg-white pr-8 rounded-xl md:shadow-[0_35px_60px_-30px_rgba(0,0,0,0.2)] w-auto md:flex md:items-center justify-start gap-8">
+      <div className="bg-white border-8 border-slate-100 hover:border-rose-500 pr-8 rounded-3xl md:shadow-[0_35px_60px_-30px_rgba(0,0,0,0.2)] transition transform ease-in-out duration-500 w-auto md:flex md:items-center justify-start gap-8">
         <div>
           <figure>
             <img
-              className="md:w-96 object-cover md:rounded-l-lg md:block hidden"
+              className="md:w-96 object-cover md:rounded-l-2xl md:block hidden"
               src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="food image"
             />
