@@ -8,7 +8,7 @@ export default function MenuPage() {
   const [resInfo, resName] = useRestroMenu(resId);
 
   return !resInfo.length ? (
-    <main className="hero mt-12 mx-48 h-full">
+    <main className="hero mt-12 mx-48 h-full animate-pulse">
       <Skeleton />
     </main>
   ) : (

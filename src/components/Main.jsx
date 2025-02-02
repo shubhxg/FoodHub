@@ -28,7 +28,7 @@ export default function Main() {
   }
 
   return !restaurantData.length ? (
-    <main className="hero mt-12 mx-48 h-full">
+    <main className="hero mt-12 mx-48 h-full animate-pulse">
       <Skeleton />
     </main>
   ) : (
