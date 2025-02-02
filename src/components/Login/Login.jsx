@@ -46,7 +46,7 @@ export default function Login() {
               <input
                 type="email"
                 id="email"
-                placeholder="Enter your email"
+                placeholder="example@gmail.com"
                 className="w-full text-black px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-rose-500"
                 value={email}
                 onChange={handleEmailChange}
@@ -63,7 +63,7 @@ export default function Login() {
               <input
                 type="password"
                 id="password"
-                placeholder="Enter your password"
+                placeholder="xxxxxxxxx"
                 className="w-full text-black px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-rose-500"
                 value={password}
                 onChange={handlePasswordChange}
